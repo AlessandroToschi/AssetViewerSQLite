@@ -7,18 +7,33 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		18EA4E6C2B3EBF20000EFB92 /* AssetViewerSQLiteApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EA4E6B2B3EBF20000EFB92 /* AssetViewerSQLiteApp.swift */; };
-		18EA4E6E2B3EBF20000EFB92 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EA4E6D2B3EBF20000EFB92 /* ContentView.swift */; };
+		18EA4E6C2B3EBF20000EFB92 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EA4E6B2B3EBF20000EFB92 /* App.swift */; };
 		18EA4E702B3EBF20000EFB92 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18EA4E6F2B3EBF20000EFB92 /* Assets.xcassets */; };
-		18EA4E732B3EBF20000EFB92 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18EA4E722B3EBF20000EFB92 /* Preview Assets.xcassets */; };
+		18EA4E7C2B3EBF42000EFB92 /* Asset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EA4E7B2B3EBF42000EFB92 /* Asset.swift */; };
+		18EA4E7F2B3EC061000EFB92 /* SQLite in Frameworks */ = {isa = PBXBuildFile; productRef = 18EA4E7E2B3EC061000EFB92 /* SQLite */; };
+		18EA4E842B3EC398000EFB92 /* AssetManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EA4E832B3EC398000EFB92 /* AssetManager.swift */; };
+		18EA4E862B3EC489000EFB92 /* AssetReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EA4E852B3EC489000EFB92 /* AssetReader.swift */; };
+		18EA4E882B3EC4AA000EFB92 /* AssetWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EA4E872B3EC4AA000EFB92 /* AssetWriter.swift */; };
+		18EA4E8A2B3EC4BE000EFB92 /* AssetReaderSQLite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EA4E892B3EC4BE000EFB92 /* AssetReaderSQLite.swift */; };
+		18EA4E8E2B3EC9A2000EFB92 /* AssetsPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EA4E8D2B3EC9A2000EFB92 /* AssetsPage.swift */; };
+		18EA4E932B3EF641000EFB92 /* AssetWriterSQLite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EA4E922B3EF641000EFB92 /* AssetWriterSQLite.swift */; };
+		18EA4E962B3EF69A000EFB92 /* AssetSQLite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EA4E952B3EF69A000EFB92 /* AssetSQLite.swift */; };
+		18EA4E982B3F4B54000EFB92 /* AssetViewer.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 18EA4E972B3F4B54000EFB92 /* AssetViewer.sqlite */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		18EA4E682B3EBF20000EFB92 /* AssetViewerSQLite.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AssetViewerSQLite.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		18EA4E6B2B3EBF20000EFB92 /* AssetViewerSQLiteApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetViewerSQLiteApp.swift; sourceTree = "<group>"; };
-		18EA4E6D2B3EBF20000EFB92 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		18EA4E6B2B3EBF20000EFB92 /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
 		18EA4E6F2B3EBF20000EFB92 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		18EA4E722B3EBF20000EFB92 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		18EA4E7B2B3EBF42000EFB92 /* Asset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Asset.swift; sourceTree = "<group>"; };
+		18EA4E832B3EC398000EFB92 /* AssetManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetManager.swift; sourceTree = "<group>"; };
+		18EA4E852B3EC489000EFB92 /* AssetReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetReader.swift; sourceTree = "<group>"; };
+		18EA4E872B3EC4AA000EFB92 /* AssetWriter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetWriter.swift; sourceTree = "<group>"; };
+		18EA4E892B3EC4BE000EFB92 /* AssetReaderSQLite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetReaderSQLite.swift; sourceTree = "<group>"; };
+		18EA4E8D2B3EC9A2000EFB92 /* AssetsPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetsPage.swift; sourceTree = "<group>"; };
+		18EA4E922B3EF641000EFB92 /* AssetWriterSQLite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetWriterSQLite.swift; sourceTree = "<group>"; };
+		18EA4E952B3EF69A000EFB92 /* AssetSQLite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetSQLite.swift; sourceTree = "<group>"; };
+		18EA4E972B3F4B54000EFB92 /* AssetViewer.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = AssetViewer.sqlite; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -26,6 +41,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18EA4E7F2B3EC061000EFB92 /* SQLite in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -51,20 +67,51 @@
 		18EA4E6A2B3EBF20000EFB92 /* AssetViewerSQLite */ = {
 			isa = PBXGroup;
 			children = (
-				18EA4E6B2B3EBF20000EFB92 /* AssetViewerSQLiteApp.swift */,
-				18EA4E6D2B3EBF20000EFB92 /* ContentView.swift */,
-				18EA4E6F2B3EBF20000EFB92 /* Assets.xcassets */,
-				18EA4E712B3EBF20000EFB92 /* Preview Content */,
+				18EA4E802B3EC300000EFB92 /* Resources */,
+				18EA4E7A2B3EBF3A000EFB92 /* UI */,
+				18EA4E792B3EBF34000EFB92 /* Core */,
+				18EA4E6B2B3EBF20000EFB92 /* App.swift */,
 			);
 			path = AssetViewerSQLite;
 			sourceTree = "<group>";
 		};
-		18EA4E712B3EBF20000EFB92 /* Preview Content */ = {
+		18EA4E792B3EBF34000EFB92 /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				18EA4E722B3EBF20000EFB92 /* Preview Assets.xcassets */,
+				18EA4E942B3EF68B000EFB92 /* SQLite */,
+				18EA4E7B2B3EBF42000EFB92 /* Asset.swift */,
+				18EA4E832B3EC398000EFB92 /* AssetManager.swift */,
+				18EA4E852B3EC489000EFB92 /* AssetReader.swift */,
+				18EA4E872B3EC4AA000EFB92 /* AssetWriter.swift */,
 			);
-			path = "Preview Content";
+			path = Core;
+			sourceTree = "<group>";
+		};
+		18EA4E7A2B3EBF3A000EFB92 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				18EA4E8D2B3EC9A2000EFB92 /* AssetsPage.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		18EA4E802B3EC300000EFB92 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				18EA4E6F2B3EBF20000EFB92 /* Assets.xcassets */,
+				18EA4E972B3F4B54000EFB92 /* AssetViewer.sqlite */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		18EA4E942B3EF68B000EFB92 /* SQLite */ = {
+			isa = PBXGroup;
+			children = (
+				18EA4E892B3EC4BE000EFB92 /* AssetReaderSQLite.swift */,
+				18EA4E922B3EF641000EFB92 /* AssetWriterSQLite.swift */,
+				18EA4E952B3EF69A000EFB92 /* AssetSQLite.swift */,
+			);
+			path = SQLite;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,6 +130,9 @@
 			dependencies = (
 			);
 			name = AssetViewerSQLite;
+			packageProductDependencies = (
+				18EA4E7E2B3EC061000EFB92 /* SQLite */,
+			);
 			productName = AssetViewerSQLite;
 			productReference = 18EA4E682B3EBF20000EFB92 /* AssetViewerSQLite.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +161,9 @@
 				Base,
 			);
 			mainGroup = 18EA4E5F2B3EBF20000EFB92;
+			packageReferences = (
+				18EA4E7D2B3EC061000EFB92 /* XCRemoteSwiftPackageReference "SQLite" */,
+			);
 			productRefGroup = 18EA4E692B3EBF20000EFB92 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -125,7 +178,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				18EA4E732B3EBF20000EFB92 /* Preview Assets.xcassets in Resources */,
+				18EA4E982B3F4B54000EFB92 /* AssetViewer.sqlite in Resources */,
 				18EA4E702B3EBF20000EFB92 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -137,8 +190,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				18EA4E6E2B3EBF20000EFB92 /* ContentView.swift in Sources */,
-				18EA4E6C2B3EBF20000EFB92 /* AssetViewerSQLiteApp.swift in Sources */,
+				18EA4E962B3EF69A000EFB92 /* AssetSQLite.swift in Sources */,
+				18EA4E842B3EC398000EFB92 /* AssetManager.swift in Sources */,
+				18EA4E932B3EF641000EFB92 /* AssetWriterSQLite.swift in Sources */,
+				18EA4E8E2B3EC9A2000EFB92 /* AssetsPage.swift in Sources */,
+				18EA4E862B3EC489000EFB92 /* AssetReader.swift in Sources */,
+				18EA4E7C2B3EBF42000EFB92 /* Asset.swift in Sources */,
+				18EA4E6C2B3EBF20000EFB92 /* App.swift in Sources */,
+				18EA4E882B3EC4AA000EFB92 /* AssetWriter.swift in Sources */,
+				18EA4E8A2B3EC4BE000EFB92 /* AssetReaderSQLite.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -271,7 +331,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"AssetViewerSQLite/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = 4UA7W8VRF2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -300,7 +360,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"AssetViewerSQLite/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = 4UA7W8VRF2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -344,6 +404,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		18EA4E7D2B3EC061000EFB92 /* XCRemoteSwiftPackageReference "SQLite" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/stephencelis/SQLite.swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.14.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		18EA4E7E2B3EC061000EFB92 /* SQLite */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 18EA4E7D2B3EC061000EFB92 /* XCRemoteSwiftPackageReference "SQLite" */;
+			productName = SQLite;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 18EA4E602B3EBF20000EFB92 /* Project object */;
 }
