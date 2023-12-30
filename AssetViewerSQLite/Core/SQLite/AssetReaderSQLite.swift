@@ -21,7 +21,7 @@ class AssetReaderSQLite: AssetReader {
       AssetsTable.height,
       AssetsTable.duration
     ])
-    self.getAssetDataQuery = AssetsTable.table.select([AssetsTable.data])
+    self.getAssetDataQuery = AssetsDataTable.table.select([AssetsDataTable.data])
   }
   
   func getAssets() -> [Asset] {
@@ -43,8 +43,8 @@ class AssetReaderSQLite: AssetReader {
       let elapsedTime = (endTime.uptimeNanoseconds - startTime.uptimeNanoseconds) / 1_000_000
       print("\(#function): \(elapsedTime) ms")
     }
-    guard let row = try? connection.pluck(self.getAssetDataQuery.where(AssetsTable.id == id))
+    guard let row = try? connection.pluck(self.getAssetDataQuery.where(AssetsDataTable.id == id))
     else { return [] }
-    return row[AssetsTable.data]!.bytes
+    return row[AssetsDataTable.data].bytes
   }
 }

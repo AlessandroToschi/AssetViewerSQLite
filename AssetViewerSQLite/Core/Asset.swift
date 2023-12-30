@@ -12,7 +12,6 @@ struct Asset: Identifiable, Hashable {
   var width: Int
   var height: Int
   var duration: Double?
-  var data: [UInt8]?
   
   var isVideo: Bool {
     return self.duration != nil
@@ -22,13 +21,25 @@ struct Asset: Identifiable, Hashable {
     id: String,
     width: Int,
     height: Int,
-    duration: Double? = nil,
-    data: [UInt8]? = nil
+    duration: Double? = nil
   ) {
     self.id = id
     self.width = width
     self.height = height
     self.duration = duration
+  }
+}
+
+
+struct AssetData: Identifiable, Hashable {
+  var id: String
+  var data: [UInt8]
+  
+  internal init(
+    id: String,
+    data: [UInt8]
+  ) {
+    self.id = id
     self.data = data
   }
 }

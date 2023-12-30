@@ -11,6 +11,7 @@ import Observation
 @Observable
 class AssetManager {
   var assets: [Asset]
+  var assetsData: [AssetData]
   
   @ObservationIgnored
   private var assetReader: AssetReader
@@ -23,6 +24,7 @@ class AssetManager {
     assetWriter: AssetWriter
   ) {
     self.assets = []
+    self.assetsData = []
     self.assetReader = assetReader
     self.assetWriter = assetWriter
   }
@@ -31,14 +33,26 @@ class AssetManager {
     self.assets = self.assetReader.getAssets()
   }
   
-  func loadData(for assetId: String) {
-    guard let assetIndex = self.assets.firstIndex(where: { $0.id == assetId })
+  func loadData(assetId: String) {
+    guard self.assetsData.firstIndex(where: { $0.id == assetId }) == nil
     else { return }
-    
-    self.assets[assetIndex].data = self.assetReader.getAssetData(id: assetId)
+    self.assetsData.append(
+      AssetData(
+        id: assetId,
+        data: self.assetReader.getAssetData(id: assetId)
+      )
+    )
   }
   
-  func add(asset: Asset) {
-    self.assetWriter.add(asset: asset)
+  func add(asset: Asset, assetData: [UInt8]) {
+    self.assetWriter.add(asset: asset, assetData: assetData)
+  }
+  
+  func asset(assetId: String) -> Asset {
+    return self.assets.first{ $0.id == assetId }!
+  }
+  
+  func assetData(assetId: String) -> AssetData? {
+    return self.assetsData.first{ $0.id == assetId }
   }
 }

@@ -8,5 +8,5 @@
 import Foundation
 
 protocol AssetWriter {
-  func add(asset: Asset)
+  func add(asset: Asset, assetData: [UInt8])
 }

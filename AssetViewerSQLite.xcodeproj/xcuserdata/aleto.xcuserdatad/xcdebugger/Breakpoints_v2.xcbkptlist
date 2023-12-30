@@ -30,8 +30,8 @@
             filePath = "AssetViewerSQLite/Core/AssetManager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "25"
-            endingLineNumber = "25"
+            startingLineNumber = "26"
+            endingLineNumber = "26"
             landmarkName = "init(assetReader:assetWriter:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -46,8 +46,8 @@
             filePath = "AssetViewerSQLite/Core/AssetManager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "31"
-            endingLineNumber = "31"
+            startingLineNumber = "33"
+            endingLineNumber = "33"
             landmarkName = "load()"
             landmarkType = "7">
             <Locations>
@@ -109,8 +109,8 @@
             filePath = "AssetViewerSQLite/UI/AssetsPage.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "68"
-            endingLineNumber = "68"
+            startingLineNumber = "66"
+            endingLineNumber = "66"
             landmarkName = "body"
             landmarkType = "24">
             <Locations>
@@ -217,8 +217,8 @@
             filePath = "AssetViewerSQLite/UI/AssetsPage.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "58"
-            endingLineNumber = "58"
+            startingLineNumber = "55"
+            endingLineNumber = "55"
             landmarkName = "body"
             landmarkType = "24">
          </BreakpointContent>
@@ -233,8 +233,8 @@
             filePath = "AssetViewerSQLite/UI/AssetsPage.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "76"
-            endingLineNumber = "76"
+            startingLineNumber = "74"
+            endingLineNumber = "74"
             landmarkName = "body"
             landmarkType = "24">
             <Locations>
@@ -446,8 +446,8 @@
             filePath = "AssetViewerSQLite/UI/AssetsPage.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "63"
-            endingLineNumber = "63"
+            startingLineNumber = "61"
+            endingLineNumber = "61"
             landmarkName = "body"
             landmarkType = "24">
             <Locations>
@@ -644,8 +644,8 @@
             filePath = "AssetViewerSQLite/UI/AssetsPage.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "95"
-            endingLineNumber = "95"
+            startingLineNumber = "93"
+            endingLineNumber = "93"
             landmarkName = "body"
             landmarkType = "24">
             <Locations>
@@ -692,8 +692,8 @@
             filePath = "AssetViewerSQLite/UI/AssetsPage.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "96"
-            endingLineNumber = "96"
+            startingLineNumber = "94"
+            endingLineNumber = "94"
             landmarkName = "body"
             landmarkType = "24">
          </BreakpointContent>
@@ -708,10 +708,58 @@
             filePath = "AssetViewerSQLite/Core/AssetManager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "42"
-            endingLineNumber = "42"
-            landmarkName = "add(asset:)"
+            startingLineNumber = "48"
+            endingLineNumber = "48"
+            landmarkName = "add(asset:assetData:)"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "77FDE02F-C9A6-4342-981B-533BF10A1855"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AssetViewerSQLite/Core/AssetManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "37"
+            endingLineNumber = "37"
+            landmarkName = "loadData(assetId:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "77FDE02F-C9A6-4342-981B-533BF10A1855 - 78236e6993f0cd4e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "AssetViewerSQLite.AssetManager.loadData(assetId: Swift.String) -&gt; ()"
+                  moduleName = "AssetViewerSQLite"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/aleto/Documents/experiments/AssetViewerSQLite/AssetViewerSQLite/Core/AssetManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "37"
+                  endingLineNumber = "37"
+                  offsetFromSymbolStart = "64">
+               </Location>
+               <Location
+                  uuid = "77FDE02F-C9A6-4342-981B-533BF10A1855 - 11fc1c254af06edc"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (AssetViewerSQLite.AssetData) -&gt; Swift.Bool in AssetViewerSQLite.AssetManager.loadData(assetId: Swift.String) -&gt; ()"
+                  moduleName = "AssetViewerSQLite"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/aleto/Documents/experiments/AssetViewerSQLite/AssetViewerSQLite/Core/AssetManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "37"
+                  endingLineNumber = "37"
+                  offsetFromSymbolStart = "68">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

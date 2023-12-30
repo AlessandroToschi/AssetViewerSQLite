@@ -14,7 +14,6 @@ struct AssetsTable {
   static let width = Expression<Int>("width")
   static let height = Expression<Int>("height")
   static let duration = Expression<Double?>("duration")
-  static let data = Expression<Blob?>("data")
 }
 
 extension Asset {
@@ -26,4 +25,10 @@ extension Asset {
       duration: row[AssetsTable.duration]
     )
   }
+}
+
+struct AssetsDataTable {
+  static let table = Table("assets_data")
+  static let id = Expression<String>("id")
+  static let data = Expression<Blob>("data")
 }

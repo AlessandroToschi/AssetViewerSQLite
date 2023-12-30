@@ -9,9 +9,6 @@ import SwiftUI
 import PhotosUI
 import CoreTransferable
 
-//photo.on.rectangle
-//video
-
 struct AssetsPage: View {
   @Environment(AssetManager.self) var assetManager
   @State var selectedPickerItem: PhotosPickerItem?
@@ -56,6 +53,7 @@ struct AssetsPage: View {
           Task { @MainActor in
             if let selectedPickerItem {
               var newAsset: Asset? = nil
+              var newAssetData: [UInt8]? = nil
               
               guard let data = try? await selectedPickerItem.loadTransferable(type: Data.self)
               else { return }
@@ -68,9 +66,9 @@ struct AssetsPage: View {
                 newAsset = Asset(
                   id: UUID().uuidString,
                   width: width,
-                  height: height,
-                  data: [UInt8](data)
+                  height: height
                 )
+                newAssetData = [UInt8](data)
               } else if selectedPickerItem.supportedContentTypes.contains(where: { $0.conforms(to: .movie) }),
                         let type = selectedPickerItem.supportedContentTypes.first {
                 let path = URL.temporaryDirectory.appending(path: "\(UUID().uuidString).\(type.preferredFilenameExtension ?? "mov")")
@@ -89,13 +87,14 @@ struct AssetsPage: View {
                   id: UUID().uuidString,
                   width: Int(size.width),
                   height: Int(size.height),
-                  duration: duration,
-                  data: [UInt8](data)
+                  duration: duration
                 )
+                newAssetData = [UInt8](data)
               }
               
-              if let newAsset {
-                self.assetManager.add(asset: newAsset)
+              if let newAsset,
+                 let newAssetData {
+                self.assetManager.add(asset: newAsset, assetData: newAssetData)
                 self.assetManager.load()
               }
             }
@@ -105,13 +104,13 @@ struct AssetsPage: View {
         }
         .onChange(of: self.selectedAssetId) {
           if let selectedAssetId {
-            //self.assetManager.load
+            self.assetManager.loadData(assetId: selectedAssetId)
           }
         }
       },
       detail: {
         if let selectedAssetId {
-          Text(selectedAssetId)
+          AssetDetail(assetId: selectedAssetId)
         } else {
           Text("Please, select an asset.")
         }

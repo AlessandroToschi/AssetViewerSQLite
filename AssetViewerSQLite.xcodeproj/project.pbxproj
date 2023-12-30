@@ -19,6 +19,8 @@
 		18EA4E932B3EF641000EFB92 /* AssetWriterSQLite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EA4E922B3EF641000EFB92 /* AssetWriterSQLite.swift */; };
 		18EA4E962B3EF69A000EFB92 /* AssetSQLite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EA4E952B3EF69A000EFB92 /* AssetSQLite.swift */; };
 		18EA4E982B3F4B54000EFB92 /* AssetViewer.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 18EA4E972B3F4B54000EFB92 /* AssetViewer.sqlite */; };
+		18EA4E9A2B40958E000EFB92 /* AssetDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EA4E992B40958E000EFB92 /* AssetDetail.swift */; };
+		18EA4E9C2B409DDD000EFB92 /* LoadingOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EA4E9B2B409DDD000EFB92 /* LoadingOverlay.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +36,8 @@
 		18EA4E922B3EF641000EFB92 /* AssetWriterSQLite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetWriterSQLite.swift; sourceTree = "<group>"; };
 		18EA4E952B3EF69A000EFB92 /* AssetSQLite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetSQLite.swift; sourceTree = "<group>"; };
 		18EA4E972B3F4B54000EFB92 /* AssetViewer.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = AssetViewer.sqlite; sourceTree = "<group>"; };
+		18EA4E992B40958E000EFB92 /* AssetDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetDetail.swift; sourceTree = "<group>"; };
+		18EA4E9B2B409DDD000EFB92 /* LoadingOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingOverlay.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +95,8 @@
 			isa = PBXGroup;
 			children = (
 				18EA4E8D2B3EC9A2000EFB92 /* AssetsPage.swift */,
+				18EA4E992B40958E000EFB92 /* AssetDetail.swift */,
+				18EA4E9B2B409DDD000EFB92 /* LoadingOverlay.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -193,8 +199,10 @@
 				18EA4E962B3EF69A000EFB92 /* AssetSQLite.swift in Sources */,
 				18EA4E842B3EC398000EFB92 /* AssetManager.swift in Sources */,
 				18EA4E932B3EF641000EFB92 /* AssetWriterSQLite.swift in Sources */,
+				18EA4E9C2B409DDD000EFB92 /* LoadingOverlay.swift in Sources */,
 				18EA4E8E2B3EC9A2000EFB92 /* AssetsPage.swift in Sources */,
 				18EA4E862B3EC489000EFB92 /* AssetReader.swift in Sources */,
+				18EA4E9A2B40958E000EFB92 /* AssetDetail.swift in Sources */,
 				18EA4E7C2B3EBF42000EFB92 /* Asset.swift in Sources */,
 				18EA4E6C2B3EBF20000EFB92 /* App.swift in Sources */,
 				18EA4E882B3EC4AA000EFB92 /* AssetWriter.swift in Sources */,
