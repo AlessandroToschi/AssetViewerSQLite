@@ -31,6 +31,13 @@ class AssetManager {
     self.assets = self.assetReader.getAssets()
   }
   
+  func loadData(for assetId: String) {
+    guard let assetIndex = self.assets.firstIndex(where: { $0.id == assetId })
+    else { return }
+    
+    self.assets[assetIndex].data = self.assetReader.getAssetData(id: assetId)
+  }
+  
   func add(asset: Asset) {
     self.assetWriter.add(asset: asset)
   }

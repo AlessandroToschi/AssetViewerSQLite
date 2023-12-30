@@ -15,18 +15,18 @@ import CoreTransferable
 struct AssetsPage: View {
   @Environment(AssetManager.self) var assetManager
   @State var selectedPickerItem: PhotosPickerItem?
-  @State var selectedAsset: Asset?
+  @State var selectedAssetId: String?
   
   var body: some View {
     NavigationSplitView(
       sidebar: {
         List(
           self.assetManager.assets,
-          id: \.self,
-          selection: $selectedAsset
+          id: \.id,
+          selection: $selectedAssetId
         ) {
           asset in
-          NavigationLink(value: asset) {
+          NavigationLink(value: asset.id) {
             HStack {
               asset.icon
               VStack(alignment: .leading) {
@@ -103,10 +103,15 @@ struct AssetsPage: View {
             self.selectedPickerItem = nil
           }
         }
+        .onChange(of: self.selectedAssetId) {
+          if let selectedAssetId {
+            //self.assetManager.load
+          }
+        }
       },
       detail: {
-        if let selectedAsset {
-          Text(selectedAsset.id)
+        if let selectedAssetId {
+          Text(selectedAssetId)
         } else {
           Text("Please, select an asset.")
         }

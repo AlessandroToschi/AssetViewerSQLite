@@ -9,4 +9,6 @@ import Foundation
 
 protocol AssetReader {
   func getAssets() -> [Asset]
+  
+  func getAssetData(id: String) -> [UInt8]
 }
