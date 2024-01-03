@@ -13,8 +13,14 @@ struct AssetViewerSQLiteApp: App {
   let assetManager: AssetManager
   
   init() {
-    let dbPath = Bundle.main.path(forResource: "AssetViewer", ofType: "sqlite")!
-    let connection = try! Connection(dbPath)
+    let documentDbPath = URL.documentsDirectory.appending(path: "AssetViewer.sqlite")
+    
+    if !FileManager.default.fileExists(atPath: documentDbPath.path()) {
+      let dbPath = Bundle.main.url(forResource: "AssetViewer", withExtension: "sqlite")!
+      try! FileManager.default.copyItem(at: dbPath, to: documentDbPath)
+    }
+    
+    let connection = try! Connection(documentDbPath.absoluteString, readonly: false)
     let assetReader = AssetReaderSQLite(connection: connection)
     let assetWriter = AssetWriterSQLite(connection: connection)
     

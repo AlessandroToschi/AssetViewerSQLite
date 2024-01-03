@@ -12,6 +12,7 @@ import Observation
 class AssetManager {
   var assets: [Asset]
   var assetsData: [AssetData]
+  var analytics: String
   
   @ObservationIgnored
   private var assetReader: AssetReader
@@ -19,33 +20,48 @@ class AssetManager {
   @ObservationIgnored
   private var assetWriter: AssetWriter
   
+  @ObservationIgnored
+  private var clock: ContinuousClock
+  
   init(
     assetReader: AssetReader,
     assetWriter: AssetWriter
   ) {
     self.assets = []
     self.assetsData = []
+    self.analytics = ""
     self.assetReader = assetReader
     self.assetWriter = assetWriter
+    self.clock = ContinuousClock()
   }
   
   func load() {
-    self.assets = self.assetReader.getAssets()
+    self.measureElapsedTime {
+      self.assets = self.assetReader.getAssets()
+    }
   }
   
   func loadData(assetId: String) {
-    guard self.assetsData.firstIndex(where: { $0.id == assetId }) == nil
-    else { return }
-    self.assetsData.append(
-      AssetData(
-        id: assetId,
-        data: self.assetReader.getAssetData(id: assetId)
+    self.measureElapsedTime {
+      guard self.assetsData.firstIndex(where: { $0.id == assetId }) == nil
+      else { return }
+      self.assetsData.append(
+        AssetData(
+          id: assetId,
+          data: self.assetReader.getAssetData(id: assetId)
+        )
       )
-    )
+    }
+  }
+  
+  func unloadData(assetId: String) {
+    self.assetsData.removeAll{ $0.id == assetId }
   }
   
   func add(asset: Asset, assetData: [UInt8]) {
-    self.assetWriter.add(asset: asset, assetData: assetData)
+    self.measureElapsedTime {
+      self.assetWriter.add(asset: asset, assetData: assetData)
+    }
   }
   
   func asset(assetId: String) -> Asset {
@@ -54,5 +70,14 @@ class AssetManager {
   
   func assetData(assetId: String) -> AssetData? {
     return self.assetsData.first{ $0.id == assetId }
+  }
+  
+  func delete(assetId: String) {
+    self.assetWriter.delete(assetId: assetId)
+  }
+  
+  private func measureElapsedTime(work: @escaping () -> ()) {
+    let duration = self.clock.measure(work)
+    self.analytics = "Elapsed time: \(duration.formatted(.units(allowed: [.seconds, .milliseconds, .microseconds])))"
   }
 }

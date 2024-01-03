@@ -30,7 +30,6 @@ class AssetWriterSQLite: AssetWriter {
           AssetsTable.width <- asset.width,
           AssetsTable.height <- asset.height,
           AssetsTable.duration <- asset.duration,
-          //AssetsTable.data <- asset.data.flatMap(Blob.init(bytes:))
         ])
       )
       
@@ -40,6 +39,12 @@ class AssetWriterSQLite: AssetWriter {
           AssetsDataTable.data <- Blob(bytes: assetData)
         ])
       )
+    }
+  }
+  
+  func delete(assetId: String) {
+    try! self.connection.transaction {
+      try! self.connection.run(AssetsTable.table.where(AssetsTable.id == assetId).delete())
     }
   }
 }

@@ -9,4 +9,6 @@ import Foundation
 
 protocol AssetWriter {
   func add(asset: Asset, assetData: [UInt8])
+  
+  func delete(assetId: String)
 }

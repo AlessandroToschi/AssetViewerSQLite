@@ -17,21 +17,27 @@ struct AssetsPage: View {
   var body: some View {
     NavigationSplitView(
       sidebar: {
-        List(
-          self.assetManager.assets,
-          id: \.id,
-          selection: $selectedAssetId
-        ) {
-          asset in
-          NavigationLink(value: asset.id) {
-            HStack {
-              asset.icon
-              VStack(alignment: .leading) {
-                Text(asset.id)
-                Text(asset.description)
+        List(selection: $selectedAssetId) {
+          ForEach(self.assetManager.assets, id: \.id) {
+            asset in
+            NavigationLink(value: asset.id) {
+              HStack {
+                asset.icon
+                VStack(alignment: .leading) {
+                  Text(asset.id)
+                  Text(asset.description)
+                }
+                Spacer()
               }
-              Spacer()
             }
+          }.onDelete {
+            indexSet in
+            for index in indexSet {
+              let assetId = self.assetManager.assets[index].id
+              self.assetManager.delete(assetId: assetId)
+              self.assetManager.unloadData(assetId: assetId)
+            }
+            self.assetManager.load()
           }
         }
         .navigationTitle("Assets")
@@ -116,6 +122,12 @@ struct AssetsPage: View {
         }
       }
     )
+    .toolbar {
+      ToolbarItemGroup(placement: .bottomBar) {
+        Text(self.assetManager.analytics)
+        Spacer()
+      }
+    }
   }
 }
 

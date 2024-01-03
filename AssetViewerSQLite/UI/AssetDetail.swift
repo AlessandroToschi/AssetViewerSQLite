@@ -14,6 +14,10 @@ struct AssetDetail: View {
   
   @State var player: AVPlayer?
   
+  var errorView: some View {
+    Text("Oh no :(\nSomething went wrong!")
+  }
+  
   var body: some View {
     let asset = self.assetManager.asset(assetId: self.assetId)
     let assetData = self.assetManager.assetData(assetId: self.assetId)
@@ -23,7 +27,7 @@ struct AssetDetail: View {
           if let player {
             VideoPlayer(player: player)
           } else {
-            Text(self.assetId)
+            errorView
           }
         } else {
           if let uiImage = UIImage(data: Data(assetData.data)) {
@@ -31,7 +35,7 @@ struct AssetDetail: View {
               .resizable()
               .aspectRatio(contentMode: .fit)
           } else {
-            Text(self.assetId)
+            errorView
           }
         }
       } else {
