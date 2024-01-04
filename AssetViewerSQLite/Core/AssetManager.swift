@@ -78,6 +78,16 @@ class AssetManager {
   
   private func measureElapsedTime(work: @escaping () -> ()) {
     let duration = self.clock.measure(work)
-    self.analytics = "Elapsed time: \(duration.formatted(.units(allowed: [.seconds, .milliseconds, .microseconds])))"
+    self.analytics = "Elapsed time: \(duration.inMicroseconds) μs"
+  }
+}
+
+extension Duration {
+  var inMilliseconds: Double {
+    return Double(self.components.seconds) * 1000.0 + Double(self.components.attoseconds) * 1E-15
+  }
+  
+  var inMicroseconds: Double {
+    return Double(self.components.seconds) * 1000.0 + Double(self.components.attoseconds) * 1E-12
   }
 }

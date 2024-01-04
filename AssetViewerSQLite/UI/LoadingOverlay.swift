@@ -9,15 +9,12 @@ import SwiftUI
 
 struct LoadingOverlay: View {
     var body: some View {
-      ZStack {
-        Rectangle()
-          .ignoresSafeArea()
-          .frame(maxWidth: .infinity, maxHeight: .infinity)
-          .background(.ultraThinMaterial)
-        ProgressView()
-          .controlSize(.extraLarge)
-          .tint(.white)
-      }
+      Color.clear
+        .background(.ultraThinMaterial)
+        .overlay() {
+          ProgressView()
+            .controlSize(.extraLarge)
+        }.ignoresSafeArea()
     }
 }
 

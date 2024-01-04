@@ -42,6 +42,8 @@ struct AssetDetail: View {
         LoadingOverlay()
       }
     }
+    .navigationTitle(assetId)
+    .navigationBarTitleDisplayMode(.inline)
     .task {
       if asset.isVideo, let assetData {
         let videoUrl = URL.temporaryDirectory.appending(path: "movie.mov")

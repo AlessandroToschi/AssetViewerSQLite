@@ -16,13 +16,6 @@ class AssetWriterSQLite: AssetWriter {
   }
   
   func add(asset: Asset, assetData: [UInt8]) {
-    let startTime = DispatchTime.now()
-    defer {
-      let endTime = DispatchTime.now()
-      let elapsedTime = (endTime.uptimeNanoseconds - startTime.uptimeNanoseconds) / 1_000_000
-      print("\(#function): \(elapsedTime) ms")
-    }
-    
     try! self.connection.transaction {
       try! self.connection.run(
         AssetsTable.table.insert([

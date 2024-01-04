@@ -17,7 +17,7 @@ struct AssetViewerSQLiteApp: App {
     
     if !FileManager.default.fileExists(atPath: documentDbPath.path()) {
       let dbPath = Bundle.main.url(forResource: "AssetViewer", withExtension: "sqlite")!
-      try! FileManager.default.copyItem(at: dbPath, to: documentDbPath)
+      try? FileManager.default.copyItem(at: dbPath, to: documentDbPath)
     }
     
     let connection = try! Connection(documentDbPath.absoluteString, readonly: false)

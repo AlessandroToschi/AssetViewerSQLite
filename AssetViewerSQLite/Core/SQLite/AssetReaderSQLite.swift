@@ -25,24 +25,12 @@ class AssetReaderSQLite: AssetReader {
   }
   
   func getAssets() -> [Asset] {
-    let startTime = DispatchTime.now()
-    defer {
-      let endTime = DispatchTime.now()
-      let elapsedTime = (endTime.uptimeNanoseconds - startTime.uptimeNanoseconds) / 1_000_000
-      print("\(#function): \(elapsedTime) ms")
-    }
     guard let rows = try? connection.prepare(self.getAssetsQuery)
     else { return [] }
     return rows.map(Asset.fromRow)
   }
   
   func getAssetData(id: String) -> [UInt8] {
-    let startTime = DispatchTime.now()
-    defer {
-      let endTime = DispatchTime.now()
-      let elapsedTime = (endTime.uptimeNanoseconds - startTime.uptimeNanoseconds) / 1_000_000
-      print("\(#function): \(elapsedTime) ms")
-    }
     guard let row = try? connection.pluck(self.getAssetDataQuery.where(AssetsDataTable.id == id))
     else { return [] }
     return row[AssetsDataTable.data].bytes
